@@ -1,6 +1,6 @@
 #' Simple pragmatic speaker with all prior preferences iterative function
 #' Iterative function independent of trial order (prior rate)
-#' \code{posterior = (1 - prior rate) $x$ evidence + (prior rate) $x$ prior}.
+#' \code{posterior = (1 - prior rate) x evidence + (prior rate)  x  prior}.
 #'
 #' @description Simple-RSA (iterative, independent on trial order)
 #' The simple pragmatic speaker considers all "imaginable" (i.e. implemented)
@@ -14,7 +14,7 @@
 #'
 #' This function takes the evidence from the current trial in consideration and also
 #' the prior from the trials before: ???????
-#' \code{posterior = (1 - prior rate) $x$ evidence + (prior rate) $x$ prior}.
+#' \code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}.
 #'
 #' @param utterance The uttered word by the speaker that the listener hears.
 #'
@@ -123,7 +123,7 @@ simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr <-
   }
 
 #' Determine speaker's inference of the posterior listener preferences (iterative setting, independent of trial order)
-#' \code{posterior = (1 - prior rate) $x$ evidence + (prior rate) $x$ prior}
+#' \code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}
 #'
 #' @description
 #' Simple RSA (iterative, independent of trial order (prior rate))
@@ -332,7 +332,7 @@ LL1_1_Iterative_pr_notObey0_pr0.5 <- function(params,  data) {
 # optimizing 2nd parameter in iterative model: obedience
 
 #' Cost function for one parameter optimization (iterative setting, independent of trial order).
-#' \code{posterior = (1 - prior rate) $x$ evidence + (prior rate) $x$ prior}
+#' \code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}
 #'
 #' Optimizing non-obedience.
 #' softness is fixed at 0.
@@ -393,7 +393,7 @@ LL1_2_Iterative_pr_pref0_pr0.5 <- function(params, data) {
 # optimizing 3rd parameter in iterative model: prior rate
 
 #' Cost function for one parameter optimization (iterative setting, independent of trial order).
-#' \code{posterior = (1 - prior rate) $x$ evidence + (prior rate) $x$ prior}
+#' \code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}
 #' Optimizing the prior rate.
 #' softness and non-obedience are fixed at 0.
 #'
@@ -452,7 +452,7 @@ LL1_3_Iterative_pr_pref0_notObey0 <- function(params,  data) {
 # obedience fixed at 0
 
 #' Cost function for one parameter optimization (iterative setting, independent of trial order).
-#' \code{posterior = (1 - prior rate) $x$ evidence + (prior rate) $x$ prior}
+#' \code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}
 #' Optimizing the softness and prior rate.
 #' non-obedience is fixed at 0.
 #'
@@ -511,7 +511,7 @@ LL2_13_Iterative_pr_notObey0 <- function(params,  data) {
 # obedience fixed at 0
 
 #' Cost function for one parameter optimization (iterative setting, independent of trial order).
-#' \code{posterior = (1 - prior rate) $x$ evidence + (prior rate) $x$ prior}
+#' \code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}
 #' Optimizing the softness and prior rate.
 #' non-obedience is fixed at 0.1.
 #'
@@ -570,7 +570,7 @@ LL2_13_Iterative_pr_notObey0.1 <- function(params,  data) {
 
 
 #' Cost function for one parameter optimization (iterative setting, independent of trial order).
-#' \code{posterior = (1 - prior rate) $x$ evidence + (prior rate) $x$ prior}
+#' \code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}
 #' Optimizing the non-obedience and prior rate.
 #' softness is fixed at 0.
 #'
