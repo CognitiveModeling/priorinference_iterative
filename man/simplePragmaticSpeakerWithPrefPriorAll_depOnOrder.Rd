@@ -89,7 +89,7 @@ preferences).
 
 This function takes the evidence from the current trial in consideration and also
 the prior from the trials before:
-\code{(1 - prior rate) $\cdot$ evidence + (prior rate) $\cdot$ prior}.
+\code{(1 - prior rate)  x  evidence + (prior rate)  x  prior}.
 }
 \details{
 This is function is the third of three functions that are used in the iterative setting using the prior rate parameter.

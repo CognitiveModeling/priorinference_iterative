@@ -4,7 +4,7 @@
 \alias{simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr}
 \title{Simple pragmatic speaker with all prior preferences iterative function
 Iterative function independent of trial order (prior rate)
-\code{posterior = (1 - prior rate) $\cdot$ evidence + (prior rate) $\cdot$ prior}.}
+\code{posterior = (1 - prior rate) x evidence + (prior rate)  x  prior}.}
 \usage{
 simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr(
   utterance,
@@ -84,7 +84,7 @@ preferences).
 
 This function takes the evidence from the current trial in consideration and also
 the prior from the trials before: ???????
-\code{posterior = (1 - prior rate) $\cdot$ evidence + (prior rate) $\cdot$ prior}.
+\code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}.
 }
 \details{
 This is function is the second of three functions that are used in the iterative setting using the prior rate parameter.

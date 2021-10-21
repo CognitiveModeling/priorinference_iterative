@@ -3,7 +3,7 @@
 \name{determineSpeakerPostListPrefsSimpleRSAWithPriorPref_indep_pr}
 \alias{determineSpeakerPostListPrefsSimpleRSAWithPriorPref_indep_pr}
 \title{Determine speaker's inference of the posterior listener preferences (iterative setting, independent of trial order)
-\code{posterior = (1 - prior rate) $\cdot$ evidence + (prior rate) $\cdot$ prior}}
+\code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}}
 \usage{
 determineSpeakerPostListPrefsSimpleRSAWithPriorPref_indep_pr(
   currentObjects,

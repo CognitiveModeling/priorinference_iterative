@@ -1,4 +1,4 @@
-Package: priorinferenceiterative
+Package: priorInferenceIterative
 Type: Package
 Title: Prior Inference Iterative 
 Version: 0.1.0
@@ -13,7 +13,6 @@ Suggests:
     testthat,
     knitr,
     rmarkdown
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Imports:
 VignetteBuilder: knitr
-

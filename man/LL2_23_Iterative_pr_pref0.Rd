@@ -3,7 +3,7 @@
 \name{LL2_23_Iterative_pr_pref0}
 \alias{LL2_23_Iterative_pr_pref0}
 \title{Cost function for one parameter optimization (iterative setting, independent of trial order).
-\code{posterior = (1 - prior rate) $\cdot$ evidence + (prior rate) $\cdot$ prior}
+\code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}
 Optimizing the non-obedience and prior rate.
 softness is fixed at 0.}
 \usage{

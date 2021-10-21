@@ -3,7 +3,7 @@
 \name{LL1_2_Iterative_pr_pref0_pr0.5}
 \alias{LL1_2_Iterative_pr_pref0_pr0.5}
 \title{Cost function for one parameter optimization (iterative setting, independent of trial order).
-\code{posterior = (1 - prior rate) $\cdot$ evidence + (prior rate) $\cdot$ prior}}
+\code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}}
 \usage{
 LL1_2_Iterative_pr_pref0_pr0.5(params, data)
 }

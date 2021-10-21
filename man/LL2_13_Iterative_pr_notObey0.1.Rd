@@ -3,7 +3,7 @@
 \name{LL2_13_Iterative_pr_notObey0.1}
 \alias{LL2_13_Iterative_pr_notObey0.1}
 \title{Cost function for one parameter optimization (iterative setting, independent of trial order).
-\code{posterior = (1 - prior rate) $\cdot$ evidence + (prior rate) $\cdot$ prior}
+\code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}
 Optimizing the softness and prior rate.
 non-obedience is fixed at 0.1.}
 \usage{
