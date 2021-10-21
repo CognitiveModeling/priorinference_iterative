@@ -21,3 +21,4 @@ library("devtools")
 ```
 install_github("CognitiveModeling/iterativePriorInference@HEAD")
 ```
+# priorinference_iterative
