@@ -1,6 +1,6 @@
 #' Simple pragmatic speaker with all prior preferences iterative function
 #' Iterative function independent of trial order (prior rate)
-#' \code{posterior = (1 - prior rate) $\cdot$ evidence + (prior rate) $\cdot$ prior}.
+#' \code{posterior = (1 - prior rate) $x$ evidence + (prior rate) $x$ prior}.
 #'
 #' @description Simple-RSA (iterative, independent on trial order)
 #' The simple pragmatic speaker considers all "imaginable" (i.e. implemented)
