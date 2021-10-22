@@ -3,7 +3,7 @@
 \name{simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr}
 \alias{simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr}
 \title{Simple pragmatic speaker with all prior preferences iterative function
-Iterative function independent of trial order (prior rate)
+Iterative function independent of trial order (prior rate).
 \code{posterior = (1 - prior rate) x evidence + (prior rate)  x  prior}.}
 \usage{
 simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr(

@@ -3,7 +3,9 @@
 \name{LL1_2_Iterative_pr_pref0_pr0.5}
 \alias{LL1_2_Iterative_pr_pref0_pr0.5}
 \title{Cost function for one parameter optimization (iterative setting, independent of trial order).
-\code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}}
+Optimizing non-obedience.
+softness is fixed at 0.
+prior rate is fixed at 0.5.}
 \usage{
 LL1_2_Iterative_pr_pref0_pr0.5(params, data)
 }
@@ -55,10 +57,5 @@ Simple RSA
 The non-obedience and prior rate parameter are fixed.
 }
 \details{
-Optimizing non-obedience.
-softness is fixed at 0.
-prior rate is fixed at 0.5.
-
-
 This function uses \code{\link{RSAModelKLDiv3params_simpleRSA4TrialsIterative_pr}}.
 }

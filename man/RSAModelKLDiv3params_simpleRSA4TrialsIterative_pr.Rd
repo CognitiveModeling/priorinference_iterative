@@ -3,8 +3,7 @@
 \name{RSAModelKLDiv3params_simpleRSA4TrialsIterative_pr}
 \alias{RSAModelKLDiv3params_simpleRSA4TrialsIterative_pr}
 \title{Simple RSA model Kullback-Leibler divergence determination
-(iterative setting, independent of trial order)
-\code{posterior = (1 - prior rate) x evidence + (prior rate) x prior}}
+(iterative setting, independent of trial order)}
 \usage{
 RSAModelKLDiv3params_simpleRSA4TrialsIterative_pr(data, par1, par2, par3)
 }
