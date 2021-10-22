@@ -13,7 +13,7 @@
 #' preferences).
 #'
 #' This function takes the evidence from the current trial in consideration and also
-#' the prior from the trials before: ???????
+#' the prior from the trials before and computes the posterior over the feature preferences of the listener.
 #' \code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}.
 #'
 #' @param utterance The uttered word by the speaker that the listener hears.
