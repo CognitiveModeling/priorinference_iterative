@@ -1,6 +1,6 @@
 # Prior Inference Iterative R package 
 
-**Authors of the package:** Martin V. Butz, Hania Elkersh, Asya Achimova, Gregory Scontras
+**Authors of the package:** Martin V. Butz, Hania Elkersh, Asya Achimova
 
 This package contains all the functions of the common code of the iterative prior inference (dependent and independent of the trial order) and utterance choice models. It was designed to analyze and model data. 
 
