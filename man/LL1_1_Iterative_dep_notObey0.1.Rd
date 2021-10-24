@@ -2,7 +2,7 @@
 % Please edit documentation in R/sRSA_iterative_dep.R
 \name{LL1_1_Iterative_dep_notObey0.1}
 \alias{LL1_1_Iterative_dep_notObey0.1}
-\title{Cost function for one parameter optimization (iterative setting).
+\title{Cost function for one parameter optimization (iterative setting, dependent on trial order).
 Optimizing softness.
 Non-obedience fixed at 0.1.}
 \usage{

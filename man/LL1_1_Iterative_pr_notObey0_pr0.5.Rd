@@ -15,7 +15,7 @@ LL1_1_Iterative_pr_notObey0_pr0.5(params, data)
   \item{softPrefValue is optimized, i.e. The strength of "preferring one entity over others". (The larger the value the higher the tendency towards uniform liking)}
   \item{non-obedience is fixed at 0, i.e. The extent to which the instruction of the speaker is obeyed by the listener.
   (0 = full obedience, infinity = full instruction ignorance)}
-  \item{priorRate is fixed to 0.5. This parameter specifies how much the prior information is weighed into the decision.}
+  \item{priorRate is fixed to 0.5. This parameter specifies how much the prior information is weighed into the decision .}
 }}
 
 \item{data}{A Matrix with data rows.

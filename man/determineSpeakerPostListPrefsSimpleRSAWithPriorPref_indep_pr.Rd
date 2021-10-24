@@ -47,7 +47,7 @@ Probability mass over all feature values.
 
 Gives a prior preferences distribution over all (nine) feature values.}
 
-\item{priorRate}{This parameter specifies how much the prior information is weighed into the speaker's decision.}
+\item{priorRate}{This parameter specifies how much the prior information is weighed into the speaker's decision is weighed into the decision of the speaker regarding the feature preferences of the listener.}
 }
 \value{
 A vector of length 9. It contains the speaker's inference of the feature value preferences of
@@ -59,4 +59,12 @@ Simple RSA (iterative, independent of trial order (prior rate))
 This function calculates the speaker's posterior guess of the
 feature value preferences of the listener in the iterative setting.
 That means how the speaker infers the preferences of the listener based on the object choice.
+}
+\examples{
+\donttest{determineSpeakerPostListPrefsSimpleRSAWithPriorPref_indep_pr(currentObjects, featureUtt,
+softPrefValue, notObeyInst, priorPrefAll, priorRate)}
+
+output:
+[1]  6.666667e-01 6.666667e-101  3.333333e-01  0.000000e+00  0.000000e+00  0.000000e+00
+[7]  0.000000e+00  0.000000e+00  0.000000e+00
 }

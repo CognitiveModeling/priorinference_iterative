@@ -83,19 +83,18 @@ object choice by the listener, prior over listener's feature value
 preferences).
 
 This function takes the evidence from the current trial in consideration and also
-the prior from the trials before: ???????
-\code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}.
+the prior from the trials before and computes the posterior over the feature preferences of the listener.
+\code{posterior = (1 - prior rate) x evidence + (prior rate) x prior}.
 }
 \details{
-This is function is the second of three functions that are used in the iterative setting using the prior rate parameter.
-The first and third one are: \code{\link{simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr}},
-\code{\link{simplePragmaticSpeakerWithPrefPriorAll_depOnOrder}}.
+This is function is the first of two functions that are used in the iterative setting using the prior rate parameter.
+The second one is: \code{\link{simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr}}.
 }
 \examples{
 \donttest{simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr(utterance, obj,
-preferencesPriorAll, validUtterances,
-currentObjects, uttToObjProbs, objectPreferenceSoftPriors, priorRate)}
+preferencesPriorAll, validUtterances, currentObjects, uttToObjProbs, objectPreferenceSoftPriors, priorRate)}
 
 output:
-[1]
+[1] 0.5333333 0.1333333 0.3333333 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+[9] 0.0000000
 }

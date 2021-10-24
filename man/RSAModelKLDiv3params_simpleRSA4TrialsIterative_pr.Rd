@@ -32,7 +32,7 @@ column structure: \code{[1:OC1,OC2,OC3,4:numUttOptions,7-X:TurkerSliderValues]}
 }}
 
 \item{par3}{\describe{
-\item{prior rate parameter}{This parameter specifies how much the prior information is weighed into the speaker's decision.
+\item{prior rate parameter}{This parameter specifies how much the prior information is weighed into the speaker's decision is weighed into the decision of the speaker regarding the feature preferences of the listener.
 }}}
 }
 \value{

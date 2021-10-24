@@ -74,7 +74,7 @@
 #'
 #' @examples
 #' \donttest{simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr(utterance, obj,
-#' preferencesPriorAll, validUtterances, currentObjects, uttToObjProbs, objectPreferenceSoftPriors, priorRate)
+#' preferencesPriorAll, validUtterances, currentObjects, uttToObjProbs, objectPreferenceSoftPriors, priorRate)}
 #'
 #' output:
 #' [1] 0.5333333 0.1333333 0.3333333 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
@@ -170,7 +170,7 @@ simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr <-
 #'
 #' @examples
 #' \donttest{determineSpeakerPostListPrefsSimpleRSAWithPriorPref_indep_pr(currentObjects, featureUtt,
-#' softPrefValue, notObeyInst, priorPrefAll, priorRate)
+#' softPrefValue, notObeyInst, priorPrefAll, priorRate)}
 #'
 #' output:
 #' [1]  6.666667e-01 6.666667e-101  3.333333e-01  0.000000e+00  0.000000e+00  0.000000e+00
