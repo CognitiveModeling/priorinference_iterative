@@ -14,7 +14,7 @@
 #'
 #' This function takes the evidence from the current trial in consideration and also
 #' the prior from the trials before and computes the posterior over the feature preferences of the listener.
-#' \code{posterior = (1 - prior rate)  x  evidence + (prior rate)  x  prior}.
+#' \code{posterior = (1 - prior rate) x evidence + (prior rate) x prior}.
 #'
 #' @param utterance The uttered word by the speaker that the listener hears.
 #'
@@ -69,16 +69,16 @@
 #'   preferences (priors).
 #'
 #' @details
-#' This is function is the second of three functions that are used in the iterative setting using the prior rate parameter.
-#' The first and third one are: \code{\link{simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr}},
-#' \code{\link{simplePragmaticSpeakerWithPrefPriorAll_depOnOrder}}.
+#' This is function is the first of two functions that are used in the iterative setting using the prior rate parameter.
+#' The second one is: \code{\link{simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr}}.
+#'
 #' @examples
 #' \donttest{simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr(utterance, obj,
-#' preferencesPriorAll, validUtterances,
-#' currentObjects, uttToObjProbs, objectPreferenceSoftPriors, priorRate)}
+#' preferencesPriorAll, validUtterances, currentObjects, uttToObjProbs, objectPreferenceSoftPriors, priorRate)
 #'
 #' output:
-#' [1]
+#' [1] 0.5333333 0.1333333 0.3333333 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+#' [9] 0.0000000
 #' @export
 simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr <-
   function(utterance,
@@ -162,10 +162,19 @@ simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr <-
 #'
 #' Gives a prior preferences distribution over all (nine) feature values.
 #'
-#' @param priorRate This parameter specifies how much the prior information is weighed into the speaker's decision.
+#' @param priorRate This parameter specifies how much the prior information is weighed into the speaker's decision is weighed into the decision of the speaker regarding the feature preferences of the listener.
 #'
+#' @export
 #' @return A vector of length 9. It contains the speaker's inference of the feature value preferences of
 #' the listener independent of the trial order.
+#'
+#' @examples
+#' \donttest{determineSpeakerPostListPrefsSimpleRSAWithPriorPref_indep_pr(currentObjects, featureUtt,
+#' softPrefValue, notObeyInst, priorPrefAll, priorRate)
+#'
+#' output:
+#' [1]  6.666667e-01 6.666667e-101  3.333333e-01  0.000000e+00  0.000000e+00  0.000000e+00
+#' [7]  0.000000e+00  0.000000e+00  0.000000e+00
 determineSpeakerPostListPrefsSimpleRSAWithPriorPref_indep_pr <- function(currentObjects, featureUtt,
                                                                                       softPrefValue, notObeyInst, priorPrefAll, priorRate) {
   validUtterances <- determineValidUtterances(currentObjects)
@@ -225,7 +234,7 @@ determineSpeakerPostListPrefsSimpleRSAWithPriorPref_indep_pr <- function(current
 #' }
 #'
 #' @param par3 \describe{
-#' \item{prior rate parameter}{This parameter specifies how much the prior information is weighed into the speaker's decision.
+#' \item{prior rate parameter}{This parameter specifies how much the prior information is weighed into the speaker's decision is weighed into the decision of the speaker regarding the feature preferences of the listener.
 #' }}
 #' @return Minimized Kullback-Leibler divergence and the optimal parameter values.
 #'
@@ -289,7 +298,7 @@ RSAModelKLDiv3params_simpleRSA4TrialsIterative_pr <- function(data, par1, par2, 
 #'   \item{softPrefValue is optimized, i.e. The strength of "preferring one entity over others". (The larger the value the higher the tendency towards uniform liking)}
 #'   \item{non-obedience is fixed at 0, i.e. The extent to which the instruction of the speaker is obeyed by the listener.
 #'   (0 = full obedience, infinity = full instruction ignorance)}
-#'   \item{priorRate is fixed to 0.5. This parameter specifies how much the prior information is weighed into the decision.}
+#'   \item{priorRate is fixed to 0.5. This parameter specifies how much the prior information is weighed into the decision .}
 #'}
 #'
 #' @param data A Matrix with data rows.
@@ -321,6 +330,7 @@ RSAModelKLDiv3params_simpleRSA4TrialsIterative_pr <- function(data, par1, par2, 
 #' \strong{10:Q2AnswerV1, V2, C3} The columns 10-12 contain the participants' slider values for the second questioned feature.
 #'
 #' @return Minimized Kullback-Leibler divergence and the optimal parameter values.
+#'
 #' @details
 #' This function uses \code{\link{RSAModelKLDiv3params_simpleRSA4TrialsIterative_pr}}.
 #' @export
@@ -346,7 +356,7 @@ LL1_1_Iterative_pr_notObey0_pr0.5 <- function(params,  data) {
 #'   \item{softPrefValue is fixed at 0, i.e. The strength of "preferring one entity over others". (The larger the value the higher the tendency towards uniform liking)}
 #'   \item{non-obedience is optimized, i.e. The extent to which the instruction of the speaker is obeyed by the listener.
 #'   (0 = full obedience, infinity = full instruction ignorance)}
-#'   \item{priorRate is fixed to 0.5. This parameter specifies how much the prior information is weighed into the decision.}
+#'   \item{priorRate is fixed to 0.5. This parameter specifies how much the prior information is weighed into the decision is weighed into the decision of the speaker regarding the feature preferences of the listener.}
 #'}
 #'
 #' @param data A Matrix with data rows.
@@ -579,7 +589,7 @@ LL2_13_Iterative_pr_notObey0.1 <- function(params,  data) {
 #'   \item{softPrefValue is fixed at 0, i.e. The strength of "preferring one entity over others". (The larger the value the higher the tendency towards uniform liking)}
 #'   \item{non-obedience is optimized, i.e. The extent to which the instruction of the speaker is obeyed by the listener.
 #'   (0 = full obedience, infinity = full instruction ignorance)}
-#'   \item{priorRate is optimized. This parameter specifies how much the prior information is weighed into the decision.}
+#'   \item{priorRate is optimized. This parameter specifies how much the prior information is weighed into the decision of the speaker posterior regarding the feature preferences of the listener.}
 #'}
 #'
 #' @param data A Matrix with data rows.
