@@ -22,7 +22,7 @@ funcType <- 3 ###############################################
 
 # Data file from Ella
 x9data = read.csv(
-  "ella_total_allDataCleaned.csv",
+  "data/ella_total_allDataCleaned.csv",
   header = TRUE,
   na.strings = c("", " ", "NA")
 )
