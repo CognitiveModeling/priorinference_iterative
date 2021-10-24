@@ -1,7 +1,7 @@
 library("priorinference")
 
 x9data = read.csv(
-  "ella_total_allDataCleaned.csv",
+  "data/ella_total_allDataCleaned.csv",
   header = TRUE,
   na.strings = c("", " ", "NA")
 )
@@ -60,5 +60,4 @@ x9data$object3 <- object3
 utterance <- match(as.character(x9data$utterance),allUtterancesNew)
 x9data$utteranceNum <- utterance
 
-#write.csv(x9data, "X9_Data/ella_coded_data_forNewFunctions.csv")
 write.csv(x9data, "data/ella_coded_data.csv")

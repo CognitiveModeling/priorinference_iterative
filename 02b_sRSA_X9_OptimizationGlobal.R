@@ -1,5 +1,5 @@
 library("priorinference")
-source("new iterative functions.R")
+library(priorinferenceiterative)
 
 ############################################################################################
 procType <- 3  ###########################################################################
@@ -19,7 +19,7 @@ funcType <- 2 ###############################################
 
 # Data file from Ella
 x9data = read.csv(
-  "ella_total_allDataCleaned.csv",
+  "data/ella_total_allDataCleaned.csv",
   header = TRUE,
   na.strings = c("", " ", "NA")
 )

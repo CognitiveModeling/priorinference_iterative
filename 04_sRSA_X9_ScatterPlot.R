@@ -1,32 +1,33 @@
 library("priorinference")
+library(priorinferenceiterative)
 
 ############################################
 # simple RSA
 ############################################
 # --- function 1 used: iterative independent of trial, half, half ---
 # one parameter
-# model predictions for one parameter: softness 
+# model predictions for one parameter: softness
 #x9data <- read.csv("data/x9dataAugm_SRSAindOpt1_fixed0_0.5_iterative_indep_half.csv")
 
-# model predictions for one parameter: obedience 
+# model predictions for one parameter: obedience
 #x9data <- read.csv("data/x9dataAugm_SRSAindOpt2_fixed0_0.5_iterative_indep_half.csv")
 
-# two parameter 
+# two parameter
 
 #x9data <- read.csv("data/x9dataAugm_SRSAindOpt12_fixed_pr0.5_iterative_indep_half.csv")
 
 # -----------------------------------------------------------------------------------
 # --- function 2 used: iterative independent of trial, (1-prior rate) ---
-# model predictions for one parameter: softness 
+# model predictions for one parameter: softness
 #x9data <- read.csv("data/x9dataAugm_SRSAindOpt1_fixed0_0.5_iterative_indep_pr.csv")
 
-# model predictions for one parameter: obedience 
+# model predictions for one parameter: obedience
 #x9data <- read.csv("data/x9dataAugm_SRSAindOpt2_fixed0_0.5_iterative_indep_pr.csv")
 
-# model predictions for one parameter: prior rate 
+# model predictions for one parameter: prior rate
 #x9data <- read.csv("data/x9dataAugm_SRSAindOpt3_fixed0_0.5_iterative_indep_pr.csv")
 
-# two parameter 
+# two parameter
 # model predictions for two parameters: softness and prior rate (obed = 0)
 #x9data <- read.csv("data/x9dataAugm_SRSAindOpt13_fixed_notObey0_iterative_indep_pr.csv")
 
@@ -47,7 +48,7 @@ library("priorinference")
 # model predictions for one parameter: obedience
 #x9data <- read.csv("data/x9dataAugm_SRSAindOpt2_fixed0_iterative_dep.csv")
 
-# two parameter 
+# two parameter
 # model predictions for two parameter: softness and obedience
 x9data <- read.csv("data/x9dataAugm_SRSAindOpt12_iterative_dep.csv")
 

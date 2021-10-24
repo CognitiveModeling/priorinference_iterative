@@ -1,5 +1,5 @@
-source("new iterative functions.R")
-
+#source("new iterative functions.R")
+library(priorinferenceiterative)
 ############################################################################################
 iterative12 <- 1   ###########################################################################
 ############################################################################################
@@ -20,7 +20,7 @@ funcType <- 3 ###############################################
 ##############################################################
 # 1 iterative independent of trial order (half evidence, half prior rate)
 # 2 iterative independent of trial order (1-prior rate)
-# 3 iterative dependent on trial order 
+# 3 iterative dependent on trial order
 
 library("priorinference")
 
@@ -126,28 +126,28 @@ idMax <- max(workerIDs)
 #################################################
 
 if(iterative12 == 1) { #iterative
-  if(indorglobal == 1){ #individual 
+  if(indorglobal == 1){ #individual
     if(funcType == 1){
     paramsWorkers12 <- as.matrix(read.csv("optimized/x9params_simpleRSA_indOpt_iterative_indep_half.csv"))
     llWorkers12 <- as.matrix(read.csv("optimized/x9KLDivs_simpleRSA_indOpt_iterative_indep_half.csv"))
     print("used funcType == 1")
-    
+
     } else if (funcType == 2) {
       paramsWorkers12 <- as.matrix(read.csv("optimized/x9params_simpleRSA_indOpt_iterative_indep_pr.csv"))
       llWorkers12 <- as.matrix(read.csv("optimized/x9KLDivs_simpleRSA_indOpt_iterative_indep_pr.csv"))
       print("used funcType == 2")
-      
+
     } else {
       paramsWorkers12 <- as.matrix(read.csv("optimized/x9params_simpleRSA_indOpt_iterative_dep.csv"))
       llWorkers12 <- as.matrix(read.csv("optimized/x9KLDivs_simpleRSA_indOpt_iterative_dep.csv"))
       print("used funcType == 3")
     }
-    
+
   } else { #iterative global
     paramsWorkers12 <- as.matrix(read.csv("x9Params_simpleRSA_globalOpt_iterative.csv"))
     llWorkers12 <- as.matrix(read.csv("x9KLDivs_simpleRSA_globalOpt_iterative.csv"))
   }
-  
+
 # not relevant for iterative scenario
 } else { # non iterative
   if(indorglobal == 1){
@@ -195,7 +195,7 @@ workerID <- -1
 #weights <- c(0.3, 0.4, 0.5, 0.6)
 #trial <- c(0, 1, 2, 3)
 #switched x9data$X with x9data$workerid, because we removed X
-for(i in c(1:length(x9data$workerid))) { 
+for(i in c(1:length(x9data$workerid))) {
   objectConstellation <- c(targetObject[i],object2[i],object3[i])
   print("objectConstellation")
   print(objectConstellation)
@@ -217,37 +217,37 @@ for(i in c(1:length(x9data$workerid))) {
     #params1 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(2)] # softness
     #params2 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(3)] # obedience
     #params3 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(4)] # prior rate
-    
+
     # ---- two parameter optimized ----
     #params12 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(4:5)] # softness and obedience
-    
+
     } else if (funcType == 2) {
       #funcType == 3
-      
+
       # ---- one parameter optimized ----
       params1 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(2)] # softness
       params2 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(3)] # obedience
       params3 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(4)] # prior rate
-      
+
       # ---- two parameter optimized ----
       params13 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(5:6)] # softness and prior rate
       params13_1 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(7:8)] # softness and prior rate
       params23 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(9:10)] # obedience and prior rate
-      
+
       # print(params)
     } else {
       #funcType == 3
-      
+
       # ---- one parameter optimized ----
       params1 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(2)] # softness, obed = 0
       params1_1 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(3)] # softness, obed = 0.1
       params2 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(4)] # obedience
-      
+
       # ---- two parameter optimized ----
       params12 <- paramsWorkers12[which(paramsWorkers12[,1]==workerID)[1],c(5:6)] # softness and obedience
-      
-    } 
-      
+
+    }
+
   }
   }
   validUtterances <- determineValidUtterances(objectConstellation)
@@ -258,14 +258,14 @@ for(i in c(1:length(x9data$workerid))) {
     priorPrefAll_56 <- getPreferencesPrior(x9data[i,"targetFeatureNum"])
     priorPrefAll_78 <- getPreferencesPrior(x9data[i,"targetFeatureNum"])
     priorPrefAll_910 <- getPreferencesPrior(x9data[i,"targetFeatureNum"])
-    
+
   } # uniform focussing on the feature type in question.
 
   if(iterative12 == 1) { #iterative
     if(parSetting == 1) { # one parameter optimized, two other fixed
       if (funcType == 1){
         # iterative function independent of trial order half, half
-        
+
         # default parameters
         postListMat1Opt[i,] <- determineSpeakerPostListPrefsSimpleRSAWithPriorPref_NewFunctions_indep(objectConstellation, featChoice,
                                                                                                       0, 0, priorPrefAll_1)
@@ -275,22 +275,22 @@ for(i in c(1:length(x9data$workerid))) {
         # 2nd parameter optimized: obedience                                                                                                                                                                            abs(params1[1]), 0, priorPrefAll_2, 0.5)
         postListMat3Opt[i,] <- determineSpeakerPostListPrefsSimpleRSAWithPriorPref_NewFunctions_indep(objectConstellation, featChoice,
                                                                                                          0 , abs(params2[1]), priorPrefAll_2)
-                                                                                                     
+
       } else if(funcType == 2){
         # iterative function independent of trial order  (1 - prior rate)
         # default parameters
         postListMat1Opt[i,] <- determineSpeakerPostListPrefsSimpleRSAWithPriorPref_NewFunctions_indep_pr(objectConstellation, featChoice,
                                                                                                          0, 0, priorPrefAll_1, 0.5)
-        # 1st parameter optimized: softness  
+        # 1st parameter optimized: softness
         postListMat2Opt[i,] <- determineSpeakerPostListPrefsSimpleRSAWithPriorPref_NewFunctions_indep_pr(objectConstellation, featChoice,
                                                                                                          abs(params1[1]), 0, priorPrefAll_2, 0.5)
-        # 2nd parameter optimized: obedience 
+        # 2nd parameter optimized: obedience
         postListMat3Opt[i,] <- determineSpeakerPostListPrefsSimpleRSAWithPriorPref_NewFunctions_indep_pr(objectConstellation, featChoice,
                                                                                                          0 , abs(params2[1]), priorPrefAll_2, 0.5)
         # 3rd parameter optimized: prior rate
         postListMat4Opt[i,] <- determineSpeakerPostListPrefsSimpleRSAWithPriorPref_NewFunctions_indep_pr(objectConstellation, featChoice,
                                                                                                          0 , 0, priorPrefAll_2, abs(params3[1]))
-        
+
       } else {
         # funcType == 3
         postListMat1Opt[i,] <- determineSpeakerPostListPrefsSimpleRSAWithPriorPref_NewFunctions_dep(objectConstellation, featChoice,
@@ -305,7 +305,7 @@ for(i in c(1:length(x9data$workerid))) {
         postListMat4Opt[i,] <- determineSpeakerPostListPrefsSimpleRSAWithPriorPref_NewFunctions_dep(objectConstellation, featChoice,
                                                                                                     0 , abs(params2[1]), priorPrefAll_2)
       }
-      
+
     } else if(parSetting == 2) {
       # 2 parameter optimization
       if (funcType == 1){
@@ -314,9 +314,9 @@ for(i in c(1:length(x9data$workerid))) {
                                                                                                       0, 0, priorPrefAll_1)
         postListMat45Opt[i,] <- determineSpeakerPostListPrefsSimpleRSAWithPriorPref_NewFunctions_indep(objectConstellation, featChoice,
                                                                                                        abs(params12[1]), abs(params12[2]), priorPrefAll_2)
-                                                                        
+
       } else if (funcType == 2){
-        
+
         # default parameters
         postListMat1Opt[i,] <- determineSpeakerPostListPrefsSimpleRSAWithPriorPref_NewFunctions_indep_pr(objectConstellation, featChoice,
                                                                                                       0, 0, priorPrefAll_1, 0.5)
@@ -326,8 +326,8 @@ for(i in c(1:length(x9data$workerid))) {
                                                                                                        abs(params13_1[1]), 0.1, priorPrefAll_78, abs(params13_1[2]))
         postListMat910Opt[i,] <- determineSpeakerPostListPrefsSimpleRSAWithPriorPref_NewFunctions_indep_pr(objectConstellation, featChoice,
                                                                                                         0,  abs(params23[1]), priorPrefAll_910, abs(params23[2]))
-        
-        
+
+
       } else {
         #funcType == 3
         # default parameters
@@ -335,19 +335,19 @@ for(i in c(1:length(x9data$workerid))) {
                                                                                                       0, 0, priorPrefAll_1)
         postListMat56Opt[i,] <- determineSpeakerPostListPrefsSimpleRSAWithPriorPref_NewFunctions_dep(objectConstellation, featChoice,
                                                                                                        abs(params12[1]), abs(params12[2]), priorPrefAll_1)
-                                                                                           
+
       }
-      
+
       }
     priorPrefAll_1 <- postListMat1Opt[i,]
     priorPrefAll_2 <- postListMat2Opt[i,]
     priorPrefAll_3 <- postListMat3Opt[i,]
     #priorPrefAll_4 <- postListMat4Opt[i,]
-    
+
     #priorPrefAll_5_6 <- postListMat56Opt[i,]
     #priorPrefAll_7_8 <- postListMat78Opt[i,]
     #priorPrefAll_9_10 <- postListMat910Opt[i,]
- 
+
   # not relevant for iterative scenario
   }else if(iterative12 == 2) {
     if(parSetting == 1) {
@@ -451,59 +451,59 @@ x9data$logLik <- logLik
 if(iterative12 == 1) { #iterative
   if(indorglobal == 1){ #individual
   if(parSetting == 1) { #one parameter optimized
-  
+
     if(funcType == 1){
-      
+
       # optimized softness
       #write.csv(x9data, "data/x9dataAugm_SRSAindOpt1_fixed0_0.5_iterative_indep_half.csv")
-      
+
       # optimized obedience
       #write.csv(x9data, "data/x9dataAugm_SRSAindOpt2_fixed0_0.5_iterative_indep_half.csv")
-      
+
     } else if(funcType == 2){
       # optimized softness
       #write.csv(x9data, "data/x9dataAugm_SRSAindOpt1_fixed0_0.5_iterative_indep_pr.csv")
-      
+
       # optimized obedience
       write.csv(x9data, "data/x9dataAugm_SRSAindOpt2_fixed0_0.5_iterative_indep_pr.csv")
-     
+
       # optimized prior rate
       #write.csv(x9data, "data/x9dataAugm_SRSAindOpt3_fixed0_0.5_iterative_indep_pr.csv")
-    
+
       } else {
       # funcType == 3
       # optimized softness, obed = 0
        #write.csv(x9data, "data/x9dataAugm_SRSAindOpt1_fixed0_iterative_dep.csv")
-      
+
       # optimized softness, obed = 0.1
       # write.csv(x9data, "data/x9dataAugm_SRSAindOpt1_fixed0.1_iterative_dep.csv")
-      
+
       # optimized obedience, soft = 0
        #write.csv(x9data, "data/x9dataAugm_SRSAindOpt2_fixed0_iterative_dep.csv")
     }
-    
+
   }else if(parSetting == 2) {
-    
+
     if (funcType == 1){
       # two parameter optim
-      
+
       #write.csv(x9data, "data/x9dataAugm_SRSAindOpt13_fixed_notObey0_iterative_indep_half.csv")
       #write.csv(x9data, "data/x9dataAugm_SRSAindOpt13_fixed_notObey0.1_iterative_indep_half.csv")
       #write.csv(x9data, "data/x9dataAugm_SRSAindOpt12_fixed_pr0.5_iterative_indep_half.csv")
-    
+
       } else if (funcType == 2){
-      
+
       #write.csv(x9data, "data/x9dataAugm_SRSAindOpt13_fixed_notObey0_iterative_indep_pr.csv")
       #write.csv(x9data, "data/x9dataAugm_SRSAindOpt13_fixed_notObey0.1_iterative_indep_pr.csv")
       #write.csv(x9data, "data/x9dataAugm_SRSAindOpt23_fixed_pref0_iterative_indep_pr.csv")
-      
+
     }else {
       # funcType == 3
       write.csv(x9data, "data/x9dataAugm_SRSAindOpt12_iterative_dep.csv")
-      
-      
+
+
     }
-    
+
   }
   # global
   } else {
@@ -513,7 +513,7 @@ if(iterative12 == 1) { #iterative
       write.csv(x9data, "data/x9dataAugm_SRSAglobalOpt_fixed0Opt2_andOpt12_iterative_withNewFunctions.csv")
     }
   }
-  
+
 # non-iterative
 } else if(iterative12 == 2) {
   if(indorglobal == 1){

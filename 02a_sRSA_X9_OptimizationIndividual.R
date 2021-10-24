@@ -1,5 +1,6 @@
-source("new iterative functions.R")
+#source("new iterative functions.R")
 library("priorinference") # load package
+library(priorinferenceiterative)
 
 # ---------------------- settings ----------------------------------------
 # --------- Which scenario do you want to use for optimization ? ---------

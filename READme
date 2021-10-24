@@ -1,0 +1,31 @@
+This text file contains information about the files in this repository.
+
+The folder "R" contains 2 files:
+sRSA_iterative_dep.R
+sRSA_iterative_indep_pr.R
+
+These contain the implementation of the new iterative functions:
+1. iterative function independent of trial order (prior rate not fixed)
+2. iterative function dependent on trial order
+
+These early implementation of these function can be found in the file: implementation_new iterative functions.R in the RSA_code repository under New_Branch_Yul --> RSA_2019_08 --> X9_code_with_package --> X9_new_iterative_functions.
+
+To optimize the models from X9 you need to load the both of the packages:
+priorinference and priorinferenceiterative package
+
+This folder also contains the optimization files numbered from 1 to 4:
+01. Data pre-processing
+02. Optimization
+    2a Optimization individual
+    2b Optimization global
+03. Model predictions
+04. Scatter plots
+
+All of the optimization files 01-04 are contained in the CognitiveModeling/priorinference_iterative repository.
+
+The folder "optimized"" contains the outputs of the optimizations.
+The folder "data" contains the raw data and the augmented data (output of the model predictions)
+The folder "plots" contains the plots created with the scatter plot script.
+
+The file "results_new_iterativOctober.Rmd" contains the results of the model predictions using the new iterative functions.
+
