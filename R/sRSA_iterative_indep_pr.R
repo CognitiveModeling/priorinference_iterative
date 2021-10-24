@@ -589,7 +589,7 @@ LL2_13_Iterative_pr_notObey0.1 <- function(params,  data) {
 #'   \item{softPrefValue is fixed at 0, i.e. The strength of "preferring one entity over others". (The larger the value the higher the tendency towards uniform liking)}
 #'   \item{non-obedience is optimized, i.e. The extent to which the instruction of the speaker is obeyed by the listener.
 #'   (0 = full obedience, infinity = full instruction ignorance)}
-#'   \item{priorRate is optimized. This parameter specifies how much the prior information is weighed into the decision of the speaker posterior regarding the feature preferences of the listener.}
+#'   \item{priorRate is optimized. This parameter specifies how much the prior information is weighed into the decision of the speaker regarding the feature preferences of the listener.}
 #'}
 #'
 #' @param data A Matrix with data rows.
