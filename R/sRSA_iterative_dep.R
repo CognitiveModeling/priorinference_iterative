@@ -78,9 +78,9 @@
 #' The first one is: \code{\link{simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr}}.
 #'
 #' @examples
-#' \donttest{simplePragmaticSpeakerWithPrefPriorAll_indepOfOrder_pr(utterance, obj,
-#' preferencesPriorAll, validUtterances,
-#' currentObjects, uttToObjProbs, objectPreferenceSoftPriors, priorRate)}
+#' \donttest{simplePragmaticSpeakerWithPrefPriorAll_depOnOrder(utterance, obj, preferencesPriorAll,
+#' validUtterances, currentObjects,
+#' uttToObjProbs, objectPreferenceSoftPriors) }
 #'
 #' output:
 #' [1] 0.5333333 0.1333333 0.3333333 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
@@ -322,7 +322,7 @@ LL1_1_Iterative_dep_notObey0 <- function(params, data) {
 
 # ---- optimizing 1st parameter in iterative model: softness ----
 
-#' Cost function for one parameter optimization (iterative setting).
+#' Cost function for one parameter optimization (iterative setting, dependent on trial order).
 #' Optimizing softness.
 #' Non-obedience fixed at 0.1.
 #'
